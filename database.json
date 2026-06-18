@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "id": "7bc01396-2160-476f-919a-512d34a300ac",
+      "name": "abhi",
+      "email": "abhi@gmail.com",
+      "passwordHash": "ba0389d56ddcfde87d1c61ca3d155f3c:3923b76f5c407f59d386b75bdb03d5543434ada6b9bf3965427963d34f74c49b2c0f1686539d9f4393bd9e2d81296de92bf74fedf71959c92c56eaef041fb92a",
+      "createdAt": "2026-06-18T09:02:24.523Z"
+    }
+  ],
+  "students": [
+    {
+      "id": "f95f9eba-f1b7-4e93-98f2-f28208f50b96",
+      "name": "Aarav Sharma",
+      "rollNo": "STU001",
+      "className": "10A",
+      "marks": 92,
+      "status": "Pass",
+      "createdAt": "2026-01-04T10:00:00.000Z"
+    },
+    {
+      "id": "a60ce3b6-f808-435d-bb66-74b3a54c016c",
+      "name": "Diya Patel",
+      "rollNo": "STU002",
+      "className": "10B",
+      "marks": 86,
+      "status": "Pass",
+      "createdAt": "2026-01-08T10:00:00.000Z"
+    },
+    {
+      "id": "a3b6b983-b23c-45cf-9dc9-3dcb4e80cf92",
+      "name": "Kabir Singh",
+      "rollNo": "STU003",
+      "className": "9A",
+      "marks": 73,
+      "status": "Pass",
+      "createdAt": "2026-02-02T10:00:00.000Z"
+    },
+    {
+      "id": "8c3559c5-fc88-4390-aa7d-a70159e09146",
+      "name": "Meera Nair",
+      "rollNo": "STU004",
+      "className": "9B",
+      "marks": 58,
+      "status": "Pass",
+      "createdAt": "2026-02-12T10:00:00.000Z"
+    },
+    {
+      "id": "0bc30b7b-c2db-4e2c-b42f-94de8060ccec",
+      "name": "Rohan Das",
+      "rollNo": "STU005",
+      "className": "8A",
+      "marks": 34,
+      "status": "Fail",
+      "createdAt": "2026-03-03T10:00:00.000Z"
+    },
+    {
+      "id": "ce21ade3-7a59-4644-a3f3-9cbeed1388bf",
+      "name": "Anika Rao",
+      "rollNo": "STU006",
+      "className": "8B",
+      "marks": 96,
+      "status": "Pass",
+      "createdAt": "2026-03-17T10:00:00.000Z"
+    }
+  ]
+}

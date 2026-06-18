@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section id="authView" class="auth-view">
+        <div class="auth-visual">
+          <div>
+            <p class="eyebrow">Student Management</p>
+            <h1>Secure dashboard for student records and performance analytics.</h1>
+            <p class="intro">Register, log in, manage students, and watch key academic metrics update instantly.</p>
+          </div>
+        </div>
+
+        <div class="auth-panel">
+          <div class="tabs" role="tablist" aria-label="Authentication">
+            <button class="tab active" id="loginTab" type="button">Login</button>
+            <button class="tab" id="registerTab" type="button">Register</button>
+          </div>
+
+          <form id="loginForm" class="auth-form">
+            <h2>User Login</h2>
+            <label>
+              Email
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" autocomplete="current-password" required />
+            </label>
+            <button class="primary" type="submit">Login</button>
+          </form>
+
+          <form id="registerForm" class="auth-form hidden">
+            <h2>Create Account</h2>
+            <label>
+              Name
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" autocomplete="new-password" minlength="6" required />
+            </label>
+            <button class="primary" type="submit">Register</button>
+          </form>
+
+          <p id="authMessage" class="message" role="status"></p>
+        </div>
+      </section>
+
+      <section id="appView" class="app-view hidden">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">JWT Authentication</p>
+            <h1>Dashboard</h1>
+          </div>
+          <div class="user-actions">
+            <span id="userName"></span>
+            <button id="logoutBtn" class="ghost" type="button">Logout</button>
+          </div>
+        </header>
+
+        <section class="stats-grid" aria-label="Dashboard summary">
+          <article class="stat">
+            <span>Total Students</span>
+            <strong id="totalStudents">0</strong>
+          </article>
+          <article class="stat">
+            <span>Average Marks</span>
+            <strong id="averageMarks">0</strong>
+          </article>
+          <article class="stat">
+            <span>Pass Percentage</span>
+            <strong id="passPercentage">0%</strong>
+          </article>
+          <article class="stat">
+            <span>Top Performer</span>
+            <strong id="topPerformer">None</strong>
+          </article>
+        </section>
+
+        <section class="workspace">
+          <div class="management">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Data Management</p>
+                <h2>Add Student</h2>
+              </div>
+              <button id="resetFormBtn" class="ghost" type="button">New</button>
+            </div>
+
+            <form id="studentForm" class="student-form">
+              <input type="hidden" name="id" />
+              <label>
+                Student Name
+                <input type="text" name="name" required />
+              </label>
+              <label>
+                Roll Number
+                <input type="text" name="rollNo" required />
+              </label>
+              <label>
+                Class
+                <input type="text" name="className" placeholder="10A" required />
+              </label>
+              <label>
+                Marks
+                <input type="number" name="marks" min="0" max="100" required />
+              </label>
+              <button id="studentSubmitBtn" class="primary" type="submit">Add Student</button>
+            </form>
+
+            <p id="studentMessage" class="message" role="status"></p>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Roll No</th>
+                    <th>Class</th>
+                    <th>Marks</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="studentRows"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <aside class="analytics">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Analytics</p>
+                <h2>Charts</h2>
+              </div>
+            </div>
+
+            <div class="chart-block">
+              <h3>Bar Chart</h3>
+              <canvas id="barChart" width="560" height="260" aria-label="Class average marks bar chart"></canvas>
+            </div>
+            <div class="chart-block">
+              <h3>Pie Chart</h3>
+              <canvas id="pieChart" width="560" height="260" aria-label="Pass fail pie chart"></canvas>
+            </div>
+            <div class="chart-block">
+              <h3>Line Chart</h3>
+              <canvas id="lineChart" width="560" height="260" aria-label="Monthly admissions line chart"></canvas>
+            </div>
+
+            <div class="top-performers">
+              <h3>Top Performers</h3>
+              <ol id="topPerformers"></ol>
+            </div>
+          </aside>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
